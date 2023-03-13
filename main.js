@@ -2,8 +2,14 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function noRepeatRandomNumber( curr_num ) {
-  
+function noRepeatRandomNumber( last_number, max_no ) {
+  let colorSelection = randomNumber( 0, max_no);
+  if( last_number ) {
+    while( colorSelection == last_number ) {
+        colorSelection = randomNumber(0, max);
+    }
+  }
+  return colorSelection;
 }
 
 let last_number;
@@ -27,19 +33,13 @@ const colors = [
 
 const button = document.querySelector("button");
 
-let max = 14;
+let max = 13;
 button.addEventListener("click", () => {
-  let colorSelection = randomNumber(0, max);
-  console.log( colorSelection );
-  if( last_number ) {
-    while( colorSelection == last_number ) {
-        console.log( `last no. = ${last_number}` );
-        colorSelection = randomNumber(0, max);
-        console.log( `colorSelection = ${colorSelection}` );
-    }
-  }
-  
+  let colorSelection = noRepeatRandomNumber( last_number, max );
+
   last_number = colorSelection;
+
+  console.log( colors[colorSelection] );
   document.body.style.background = colors[colorSelection];
 });
 
