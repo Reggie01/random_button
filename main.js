@@ -41,6 +41,7 @@ button.addEventListener("click", () => {
 
   console.log( colors[colorSelection] );
   document.body.style.background = colors[colorSelection];
+  button.style.background = colors[(colorSelection * 2) % max ];
 });
 
 
