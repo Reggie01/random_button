@@ -7,3 +7,45 @@ html {
 #container {
   margin: auto;
 }
+
+.large_btn {
+    font: 4rem "Georgia", sans-serif;
+    line-height: 64px;
+    font-weight: 400;
+    height: 60px;
+    min-width: 72px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 30px;
+    border-width: 0px;
+    text-align: center;
+}
+
+.med_btn {
+    font: 2.81rem "Fira Sans", sans-serif;
+    line-height: 64px;
+    font-weight: 400;
+    height: 60px;
+    min-width: 72px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 30px;
+    border-width: 0px;
+    text-align: center;
+}
+
+.small_btn {
+    font: 2.25rem "Tacoma", sans-serif;
+    line-height: 36px;
+    font-weight: 400;
+    height: 60px;
+    min-width: 72px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-radius: 30px;
+    border-width: 0px;
+    text-align: center;
+}
+
+
+

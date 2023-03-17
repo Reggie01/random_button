@@ -14,6 +14,8 @@ function noRepeatRandomNumber( last_number, max_no ) {
 
 let last_number;
 
+const btn_sizes = [ 'large_btn', 'med_btn', 'small_btn' ];
+
 const colors = [
   "BlueViolet",
   "DarkMagenta",
@@ -34,6 +36,7 @@ const colors = [
 const button = document.querySelector("button");
 
 let max = 13;
+let last_btn_selection;
 button.addEventListener("click", () => {
   let colorSelection = noRepeatRandomNumber( last_number, max );
 
@@ -41,7 +44,19 @@ button.addEventListener("click", () => {
 
   console.log( colors[colorSelection] );
   document.body.style.background = colors[colorSelection];
-  button.style.background = colors[(colorSelection * 2) % max ];
+  button.style.color = colors[(colorSelection * 2) % max ];
+
+  let buttonSelection = colorSelection % 3;
+  
+  if( last_btn_selection ) {
+    button.classList.replace( last_btn_selection, btn_sizes[buttonSelection] );
+    last_btn_selection = btn_sizes[buttonSelection];
+  } else {
+    button.classList.add( btn_sizes[buttonSelection] );
+    last_btn_selection = btn_sizes[buttonSelection];
+  }
+  
+  
 });
 
 
